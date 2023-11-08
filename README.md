@@ -33,18 +33,18 @@ Pertama, saya meng-generate proyek Flutter baru dengan nama archive_of_ours, kem
 - Menambah item (Tambah Item)
 - Logout (Logout)
  ### Memunculkan Snackbar dengan tulisan:
-- "Kamu telah menekan tombol Lihat Item" ketika tombol Lihat Item ditekan.
-- "Kamu telah menekan tombol Tambah Item" ketika tombol Tambah Item ditekan.
-- "Kamu telah menekan tombol Logout" ketika tombol Logout ditekan.
+- "Kamu telah menekan tombol Lihat Item ketika tombol Lihat Item ditekan.
+- "Kamu telah menekan tombol Tambah Item ketika tombol Tambah Item ditekan.
+- "Kamu telah menekan tombol Logout ketika tombol Logout ditekan.
 
 - Pertama, saya akan mengubah sifat widget halaman menu menjadi stateless. Pada file main.dart, saya mengubah MyHomePage(title: 'Flutter Demo Home Page') menjadi
 MyHomePage() saja dan juga menghapus const. Lal, pada file menu.dart, saya akan mengubah sifat widget halaman menjadi stateless. Saya merubah ({super.key, required this.title}) menjadi ({Key? key}) : super(key: key);. Saya juga hapus final String title dan fungsi State.
 
 - Untuk membuat tombol dan menampilkannya, saya perlu menambahkan item-item yang dijual. Saya lakukan dengan mendefinisikan tipe pada list saya. Saya membuat class Commission yang berisi atribut name, icon, dan color. Lalu dibawah kode MyHomePage({Key? key}) : super(key: key);, saya menambahkan item-item komisi yang dijual (nama, icon, dan color item tersebut).
 
-- Selanjutnya saya menambahkan serangkaian kode didalam Widget build yang akan menampilkan tombol dari class item Commission. Disini widget wrapper saya bentuk menjadi scrollable, set padding, dan menampilkan children secara vertikal. Saya juga menampilkan text 'Archive Of Ours' dan di-set menjadi di center aplikasi. Dalam grid layout, disinilah item akan ditampilkan dari list yang berisi item-item yang telah saya buat.
+- Selanjutnya saya menambahkan serangkaian kode didalam Widget build yang akan menampilkan tombol (Melihat Commission, Menambah Commission, dan Logout) dari class item Commission. Disini widget wrapper saya bentuk menjadi scrollable, set padding, dan menampilkan children secara vertikal. Saya juga menampilkan text 'Archive Of Ours' dan di-set menjadi di center aplikasi. Dalam grid layout, disinilah item akan ditampilkan dari list yang berisi item-item yang telah saya buat.
 
-- Saya membuat widget stateless baru yang akan menampilkan card agar tombol item dapat tervisualisasi. Atribut class CommissionCard ini adalah Commission. Widget build didalam class ini akan mengembalikan pop-up text yang menandakan salah satu tombol telah di-klik kapanpun user berinteraksi dengan tombolnya. Saya juga set alignment pop-up text dan paddingnya disini.
+- Saya membuat widget stateless baru yang akan menampilkan card agar tombol item dapat tervisualisasi. Atribut class CommissionCard ini adalah Commission. Widget build didalam class ini akan mengembalikan pop-up text (Kamu telah menekan tombol <Tombol>) yang menandakan salah satu tombol telah di-klik kapanpun user berinteraksi dengan tombolnya. Saya juga set alignment pop-up text dan paddingnya disini.
 
 # Bonus
   ## Kamu akan mendapatkan nilai bonus pada penilaian tugas ini apabila kamu mengimplementasikan warna-warna yang berbeda untuk setiap tombol (Lihat Item, Tambah Item, dan Logout).
