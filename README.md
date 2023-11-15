@@ -37,13 +37,13 @@
 - Untuk widget ElevatedButton, saya memberikan nilai parameter onPressed yang berupa sebuah fungsi anonim yang mengecek apakah form valid atau tidak dengan menggunakan method validate() dari variabel GlobalKey<FormState>. Jika form valid, panggil method save() dari variabel tersebut untuk menyimpan data ke variabel-variabel yang sudah dibuat. Kemudian, dilakukan aksi yang diinginkan, seperti menambahkan data ke database atau kembali ke halaman sebelumnya.
 - Untuk menampilkan halaman formulir tambah commission baru, saya menambahkan routing ke halaman tersebut di dalam drawer menu.
 
-###
+![1700022494738](https://github.com/nadyaaysha/archive_of_ours-mobile/assets/124881541/1e17e5b2-6bdd-43f0-8d56-72db4d90713a)
 
 Ketika tombol "Tambah Commission" ditekan, aplikasi akan mengarahkan pengguna ke halaman form tambah commission baru.
 - Saya menggunakan fungsi `Navigator.push` untuk melakukan navigasi ke halaman baru. Fungsi tersebut menerima dua parameter, yaitu `context` dan `MaterialPageRoute`. Parameter `context` digunakan untuk memberikan konteks pada fungsi `Navigator.push`, sedangkan parameter `MaterialPageRoute` digunakan untuk menentukan halaman yang akan ditampilkan.
 - Pada parameter `MaterialPageRoute`, terdapat sebuah objek `builder` yang berisi sebuah fungsi anonim. Fungsi tersebut akan mengembalikan sebuah widget `CommissionFormPage`. Widget tersebut akan menampilkan halaman form tambah commission baru.
 
-###
+![1700022547236](https://github.com/nadyaaysha/archive_of_ours-mobile/assets/124881541/c20a5344-ff4f-4d0d-aeea-1695b95f9de0)
 
 - Saya membuat fungsi showDialog() pada bagian onPressed() dari widget ElevatedButton yang berada di dalam widget Form. Fungsi ini akan menampilkan sebuah dialog atau pop-up ketika tombol ditekan.
 - Selanjutnya, saya membuat  widget AlertDialog sebagai parameter builder dari fungsi showDialog(). Widget ini akan menentukan tampilan dan isi dari dialog atau pop-up yang akan muncul.
@@ -52,7 +52,7 @@ Ketika tombol "Tambah Commission" ditekan, aplikasi akan mengarahkan pengguna ke
 - Tidak lupa saya membuat beberapa widget Text sebagai children dari widget Column. Widget ini akan menampilkan data dari formulir yang diisi dengan menggunakan variabel-variabel yang sudah dibuat sebelumnya, seperti _title, _wordCount, _description, _genre, dan _characterSource.
 - Terakhir, saya membuat sebuah widget TextButton sebagai parameter actions dari widget AlertDialog. Widget ini akan menampilkan sebuah tombol yang dapat menutup dialog atau pop-up ketika ditekan. Saya menggunakan fungsi Navigator.pop() pada bagian onPressed() dari widget TextButton untuk menutup dialog atau pop-up.
 
-###
+![1700022577725](https://github.com/nadyaaysha/archive_of_ours-mobile/assets/124881541/4a4a7c62-376b-4cda-a6cc-06d96af66c7e)
 
 - Saya membuat widget LeftDrawer d dalam berkas left_drawer.dart yang mengembalikan widget Drawer sebagai hasilnya. Widget Drawer berisi widget ListView yang berisi beberapa widget ListTile sebagai opsi menu.
 - Di dalamnya, saya membuat  widget DrawerHeader sebagai child pertama dari widget ListView. Widget DrawerHeader menampilkan judul dan deskripsi aplikasi.
