@@ -24,7 +24,7 @@ class _CommissionFormPageState extends State<CommissionFormPage> {
         appBar: AppBar(
             title: const Center(
             child: Text(
-                'Form Tambah Produk',
+                'Form Tambah Commission',
             ),
             ),
             backgroundColor: Colors.indigo,
