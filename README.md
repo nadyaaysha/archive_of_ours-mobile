@@ -1,5 +1,69 @@
 # Archive Of Ours
 
+# Tugas 8
+
+## Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+
+ `Navigator.push()` dan `Navigator.pushReplacement()` adalah dua metode navigasi yang berbeda pada Flutter. `Navigator.push()` digunakan untuk menambahkan halaman baru ke dalam tumpukan navigasi, sedangkan `Navigator.pushReplacement()` mengganti halaman teratas dalam tumpukan navigasi dengan halaman baru. Contoh penggunaan `Navigator.push()` adalah ketika pengguna ingin menavigasi ke halaman baru, seperti ketika pengguna menekan tombol "Tambahkan" pada halaman daftar item untuk menambahkan item baru. Contoh penggunaan `Navigator.pushReplacement()` adalah ketika pengguna ingin mengganti halaman saat ini dengan halaman baru, seperti ketika pengguna menekan tombol "Kembali" pada halaman detail item untuk kembali ke halaman daftar item. 
+
+## Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+.
+    * `Container`: Widget ini digunakan untuk menggabungkan beberapa widget lainnya menjadi satu widget yang dapat diatur ukurannya, posisinya, dan dekorasinya.
+    * `Row`: Widget ini digunakan untuk menampilkan widget lain secara horizontal.
+    * `Column`: Widget ini digunakan untuk menampilkan widget lain secara vertikal.
+    * `Stack`: Widget ini digunakan untuk menampilkan widget lain secara bertumpuk.
+    * `Expanded`: Widget ini digunakan untuk memperluas widget ke seluruh ruang yang tersedia.
+
+## Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+
+ Elemen input pada form yang saya gunakan pada tugas kali ini adalah `TextFormField`. Saya menggunakan `TextFormField` untuk memungkinkan pengguna memasukkan teks ke dalam form. Saya memilih elemen input ini karena mereka mudah digunakan dan dapat disesuaikan dengan baik dengan kebutuhan tugas.
+
+## Bagaimana penerapan clean architecture pada aplikasi Flutter?
+ 
+ Penerapan clean architecture pada aplikasi Flutter melibatkan pembagian kode menjadi beberapa lapisan yang terpisah, yaitu lapisan presentasi, lapisan domain, dan lapisan data. Lapisan presentasi berisi kode yang berkaitan dengan tampilan aplikasi, seperti widget dan logika tampilan. Lapisan domain berisi kode yang berkaitan dengan logika bisnis aplikasi, seperti model dan pengontrol. Lapisan data berisi kode yang berkaitan dengan akses ke sumber daya eksternal, seperti database dan API. Dengan membagi kode menjadi lapisan yang terpisah, aplikasi menjadi lebih mudah dipelihara dan ditingkatkan, serta lebih mudah untuk diuji dan dikembangkan.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
+
+![1700022419548](https://github.com/nadyaaysha/archive_of_ours-mobile/assets/124881541/15a28062-4037-4d1d-b586-4904ffcb914b)
+
+- Saya membuat berkas baru di dalam direktori lib dengan nama commission_form.dart
+- Pada berkas, saya membuat class StatefulWidget dengan nama CommissionFormPage yang mengembalikan sebuah widget Scaffold.
+- Di dalam widget Scaffold terdapat appBar dengan title "Form Tambah Commission" dan body berupa widget Form.
+- Di dalam widget Form, saya membuat sebuah variabel GlobalKey<FormState> untuk menyimpan state dari form. Variabel ini adalah nilai parameter key dari widget Form.
+- Sesuai proyek Django sebelumnya, saya membuat lima variabel bertipe String dan int untuk menyimpan nilai input dari title, wordCount, description, genre, dan characterSource. Inisialisasi variabel-variabel ini dengan nilai "" dan 0.
+- Lalu, saya membuat sebuah widget Column yang berisi tiga widget TextFormField dan satu widget ElevatedButton. Widget TextFormField untuk menerima input dari pengguna dan widget ElevatedButton untuk menangani aksi simpan data.
+- Untuk setiap widget TextFormField, saya memberikan nilai parameter validator yang berupa sebuah fungsi anonim yang menerima input dari pengguna dan mengembalikan pesan error jika input tidak valid. Contoh validasi yang dapat dilakukan adalah memeriksa apakah input kosong atau tidak, dan apakah input sesuai dengan tipe data yang diharapkan.
+- Untuk setiap widget TextFormField, saya memberikan nilai parameter onSaved yang berupa sebuah fungsi anonim yang menerima input dari pengguna dan menyimpannya ke variabel yang sesuai. Contoh: onSaved: (value) => name = value.
+- Untuk widget ElevatedButton, saya memberikan nilai parameter onPressed yang berupa sebuah fungsi anonim yang mengecek apakah form valid atau tidak dengan menggunakan method validate() dari variabel GlobalKey<FormState>. Jika form valid, panggil method save() dari variabel tersebut untuk menyimpan data ke variabel-variabel yang sudah dibuat. Kemudian, dilakukan aksi yang diinginkan, seperti menambahkan data ke database atau kembali ke halaman sebelumnya.
+- Untuk menampilkan halaman formulir tambah commission baru, saya menambahkan routing ke halaman tersebut di dalam drawer menu.
+
+###
+
+Ketika tombol "Tambah Commission" ditekan, aplikasi akan mengarahkan pengguna ke halaman form tambah commission baru.
+- Saya menggunakan fungsi `Navigator.push` untuk melakukan navigasi ke halaman baru. Fungsi tersebut menerima dua parameter, yaitu `context` dan `MaterialPageRoute`. Parameter `context` digunakan untuk memberikan konteks pada fungsi `Navigator.push`, sedangkan parameter `MaterialPageRoute` digunakan untuk menentukan halaman yang akan ditampilkan.
+- Pada parameter `MaterialPageRoute`, terdapat sebuah objek `builder` yang berisi sebuah fungsi anonim. Fungsi tersebut akan mengembalikan sebuah widget `CommissionFormPage`. Widget tersebut akan menampilkan halaman form tambah commission baru.
+
+###
+
+- Saya membuat fungsi showDialog() pada bagian onPressed() dari widget ElevatedButton yang berada di dalam widget Form. Fungsi ini akan menampilkan sebuah dialog atau pop-up ketika tombol ditekan.
+- Selanjutnya, saya membuat  widget AlertDialog sebagai parameter builder dari fungsi showDialog(). Widget ini akan menentukan tampilan dan isi dari dialog atau pop-up yang akan muncul.
+- Saya juga membuat  widget SingleChildScrollView sebagai parameter content dari widget AlertDialog. Widget ini akan membuat isi dialog atau pop-up menjadi scrollable jika terlalu panjang.
+- Kemudian, saya membuat widget Column sebagai child dari widget SingleChildScrollView1. Widget ini akan menampung beberapa widget Text yang akan menampilkan data dari formulir yang diisi.
+- Tidak lupa saya membuat beberapa widget Text sebagai children dari widget Column. Widget ini akan menampilkan data dari formulir yang diisi dengan menggunakan variabel-variabel yang sudah dibuat sebelumnya, seperti _title, _wordCount, _description, _genre, dan _characterSource.
+- Terakhir, saya membuat sebuah widget TextButton sebagai parameter actions dari widget AlertDialog. Widget ini akan menampilkan sebuah tombol yang dapat menutup dialog atau pop-up ketika ditekan. Saya menggunakan fungsi Navigator.pop() pada bagian onPressed() dari widget TextButton untuk menutup dialog atau pop-up.
+
+###
+
+- Saya membuat widget LeftDrawer d dalam berkas left_drawer.dart yang mengembalikan widget Drawer sebagai hasilnya. Widget Drawer berisi widget ListView yang berisi beberapa widget ListTile sebagai opsi menu.
+- Di dalamnya, saya membuat  widget DrawerHeader sebagai child pertama dari widget ListView. Widget DrawerHeader menampilkan judul dan deskripsi aplikasi.
+- Saya juga membuat dua widget ListTile sebagai child selanjutnya dari widget ListView. Widget ListTile pertama akan menampilkan ikon rumah dan teks “Halaman Utama”. Widget ListTile kedua akan menampilkan ikon keranjang belanja dan teks “Tambah Commission”.
+- Saya menambahkan atribut onTap pada masing-masing widget ListTile. Atribut onTap akan menentukan aksi yang dilakukan saat pengguna mengetuk opsi menu.
+- Selanjutnya saya membentuk widget ListTile pertama yang akan melakukan navigasi ke halaman utama yang telah dibuat dengan widget MyHomePage.
+- Untuk widget ListTile kedua, saya juga akan melakukan navigasi ke halaman form tambah commission yang dibuat dengan widget CommissionFormPage.
+- Setelah membuat widget LeftDrawer, saya tambahkan widget tersebut sebagai nilai dari atribut drawer pada widget Scaffold yang digunakan untuk membuat halaman utama dan halaman form tambah commission.
+
+# Tugas 7
+
 # Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
 
 Stateless widget adalah widget statis yang tidak dapat berubah, sedangkan stateful widget adalah widget yang dinamis dan dapat berubah. Stateless widget biasanya digunakan untuk membuat widget atau komponen yang sederhana dan bersifat statis, sedangkan stateful widget biasanya digunakan untuk membuat widget yang memiliki data atau komponen yang akan berubah seiring waktu.
