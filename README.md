@@ -1,5 +1,52 @@
 # Archive Of Ours
 
+# Tugas 9
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+Bisa dlakukan pengambilan data JSON tanpa membuat model terlebih dahulu. Namun, dengan membuat model akan lebih memudahkan untuk dibaca dan mngidentifikasi bug.
+
+## Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+
+CookieRequest adalah sebuah fungsi yang digunakan untuk melakukan permintaan HTTP dengan mengirimkan cookie. Instance CookieRequest perlu dibagikan ke semua komponen di aplikasi Flutter karena instance tersebut menyimpan informasi cookie yang diperlukan untuk melakukan permintaan HTTP selanjutnya.
+
+## Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
+
+Mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter, 
+A.] Membuat function HTTP request dengan melakukan Uri.parse terhadap link yang mengandung JSON, 
+B.] Lalu mengambilnya menggunakan get dengan tipe application/json 6789. 
+C.] Setelah itu, data JSON tersebut dapat diolah dan ditampilkan pada Flutter.
+
+## Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+
+1.] User memasukkan data akunnya pada aplikasi Flutter.
+2.] Aplikasi Flutter mengirimkan data akun ke server Django.
+3.] Server Django memeriksa data akun yang diterima dari aplikasi Flutter.
+4.] Jika data akun valid, server Django mengembalikan token ke aplikasi Flutter.
+5.] Aplikasi Flutter menyimpan token yang diterima dari server Django.
+6.] Aplikasi Flutter mengirimkan token ke server Django setiap kali melakukan permintaan HTTP.
+7.] Server Django memeriksa token yang diterima dari aplikasi Flutter.
+8.] Jika token valid, server Django mengembalikan data yang diminta oleh aplikasi Flutter.
+9.] Aplikasi Flutter menampilkan menu yang diminta oleh user
+
+## Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.
+
+`MaterialApp`: Widget yang menyediakan konfigurasi tema, navigasi, dan lainnya untuk aplikasi Flutter yang menggunakan Material Design.
+`Scaffold`: Widget yang menyediakan struktur layout dasar untuk aplikasi Material Design, seperti app bar, drawer, body, dan floating action button.
+`AppBar`: Widget yang menampilkan app bar, yaitu sebuah panel horizontal yang biasanya berisi judul aplikasi, menu, dan aksi.
+`Text`: Widget yang menampilkan teks dengan gaya tertentu.
+`LeftDrawer`: Widget kustom yang dibuat untuk menampilkan drawer, yaitu sebuah panel vertikal yang dapat ditarik dari sisi kiri layar dan berisi menu navigasi.
+`FutureBuilder`: Widget yang membangun dirinya sendiri berdasarkan hasil terbaru dari interaksi dengan objek Future, seperti pemanggilan web service.
+`ListView`: Widget yang menampilkan daftar scrollable dari widget anak.
+`Container`: Widget yang menggabungkan beberapa widget lainnya, seperti padding, margin, decoration, transform, dan lainnya.
+`Column`: Widget yang menampilkan widget anak dalam arah vertikal.
+`SizedBox`: Widget yang memiliki ukuran tetap dan dapat digunakan untuk memberi jarak antara widget lainnya.
+`ElevatedButton`: Widget yang menampilkan tombol dengan efek elevasi dan warna latar.
+`TextField`: Widget yang menampilkan bidang input teks yang dapat diedit oleh pengguna.
+`Provider`: Widget yang menyediakan objek CookieRequest ke semua widget anak, sehingga memudahkan pengelolaan state dan komunikasi dengan web service.
+`AlertDialog`: Widget yang menampilkan dialog yang dapat memberi informasi atau meminta konfirmasi dari pengguna.
+`TextButton`: Widget yang menampilkan tombol dengan teks dan tanpa latar.
+
 # Tugas 8
 
 ## Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
